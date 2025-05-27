@@ -162,4 +162,80 @@ body {
 OB  background-color: #e13b00;
   color: white;
 OBOB}
+OB/* Footer Section */
+.footer {
+OB  background-color: #333;
+  color: white;
+OB  padding: 20px 0;
+}
+
+.footer .footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer .footer-links a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.1em;
+}
+
+.footer .footer-links a:hover {
+  color: #ff4c00;
+}
+
+.footer p {
+  text-align: center;
+  font-size: 1em;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav {
+    margin-top: 20px;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-content h1 {
+    font-size: 2.5em;
+  }
+
+  .hero-content p {
+    font-size: 1em;
+  }
+
+  .hero .btn {
+    font-size: 1em;
+  }
+}
+
+@media (max-width: 480px) {
+  .category-card h3 {
+    font-size: 1.5em;
+  }
+
+  .category-card ul li {
+    font-size: 0.9em;
+  }
+
+  .newsletter-form input {
+    width: 250px;
+  }
+
+  .footer p {
+    font-size: 0.9em;
+  }
+
+
+}
 
