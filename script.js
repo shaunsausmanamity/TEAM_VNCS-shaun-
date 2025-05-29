@@ -119,4 +119,13 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
+// 6. Basic product interaction
+    document.querySelectorAll('.category-card li').forEach(item => {
+        item.style.cursor = 'pointer';
+        item.addEventListener('click', function() {
+            const productText = this.textContent.split('\n')[0].trim();
+            console.log('Product selected:', productText);
+            // In a real implementation, this would add to cart
+        });
+    });
+});
