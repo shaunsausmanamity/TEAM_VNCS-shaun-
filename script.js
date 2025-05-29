@@ -84,4 +84,39 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
+/ 4. Product card hover effects with inline styles
+    const categoryCards = document.querySelectorAll('.category-card');
+    categoryCards.forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-5px)';
+            this.style.boxShadow = '0 10px 20px rgba(0,0,0,0.1)';
+            this.style.transition = 'all 0.3s ease';
+        });
+        
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0)';
+            this.style.boxShadow = '0 5px 15px rgba(0,0,0,0.05)';
+        });
+    });
+
+    // 5. Active navigation highlighting
+    window.addEventListener('scroll', function() {
+        const scrollPosition = window.scrollY;
+        const sections = document.querySelectorAll('section');
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop - 100;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                document.querySelectorAll('.nav a').forEach(link => {
+                    link.style.borderBottom = 'none';
+                    if (link.getAttribute('href') === `#${sectionId}`) {
+                        link.style.borderBottom = '2px solid white';
+                    }
+                });
+            }
+        });
+    });
 
